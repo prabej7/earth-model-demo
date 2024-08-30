@@ -1,5 +1,5 @@
 import "./App.css";
-import Model from "./components/Model";
+import Model from "./components/Earth";
 
 function App() {
   return (
