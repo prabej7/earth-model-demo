@@ -1,10 +1,10 @@
 import "./App.css";
-import Model from "./components/Earth";
+import Home from "./pages/Home";
 
 function App() {
   return (
     <>
-      <Model />
+      <Home />
     </>
   );
 }

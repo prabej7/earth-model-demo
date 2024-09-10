@@ -31,7 +31,7 @@ const EarthGroup: React.FC<Props> = ({ position, onClick }) => {
     >
       <mesh>
         <icosahedronGeometry args={[1, 12]} />
-        <meshStandardMaterial map={earthMap} />
+        <meshStandardMaterial map={earthMap}  />
       </mesh>
       <mesh>
         <icosahedronGeometry args={[1.01, 12]} />
