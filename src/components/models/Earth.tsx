@@ -1,15 +1,16 @@
+import { ModelProps } from "@/constants/types/modelProps";
 import { useTexture } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 import { useRef } from "react";
 import * as THREE from "three";
 
-const EarthMesh: React.FC = () => {
+const EarthMesh: React.FC<ModelProps> = ({ position }) => {
   const earthRef = useRef<THREE.Group>(null);
   const [earthDay, earthNight, earthCloud, earthSpec] = useTexture([
-    "/earth8k.jpg",
-    "/03_earthlights1k.jpg",
-    "/01_earthbump1k.jpg",
-    "/02_earthspec1k.jpg",
+    "/textures/earth/earth8k.jpg",
+    "/textures/earth/03_earthlights1k.jpg",
+    "/textures/earth/01_earthbump1k.jpg",
+    "/textures/earth/02_earthspec1k.jpg",
   ]);
 
   useFrame(() => {
@@ -18,7 +19,7 @@ const EarthMesh: React.FC = () => {
     }
   });
   return (
-    <group ref={earthRef} rotation={[0.41, 0, 0]}>
+    <group ref={earthRef} rotation={[0.41, 0, 0]} position={position}>
       <mesh>
         <icosahedronGeometry args={[1, 16]} />
         <meshStandardMaterial map={earthDay} flatShading />
