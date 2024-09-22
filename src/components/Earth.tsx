@@ -117,7 +117,7 @@ const Model: React.FC = () => {
   const [target, setTarget] = useState<THREE.Vector3>(
     new THREE.Vector3(0, 0, 0)
   );
-  const [isMoving, setIsMoving] = useState(false);
+  const [_, setIsMoving] = useState(false);
 
   const handleClick = (name: string) => {
     setIsMoving(true);
